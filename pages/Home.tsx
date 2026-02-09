@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, BookOpen, Truck, ShieldCheck, ArrowRight, Play, Users } from 'lucide-react';
-import { MISSION, VISION } from '../constants';
+import { MISSION, VISION } from '../constants.ts';
 
 const Home: React.FC = () => {
   return (

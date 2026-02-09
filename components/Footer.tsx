@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Globe, Facebook, Twitter, Instagram } from 'lucide-react';
-import { CONTACT_INFO, MISSION } from '../constants';
+import { CONTACT_INFO, MISSION } from '../constants.ts';
 
 const Footer: React.FC = () => {
   return (

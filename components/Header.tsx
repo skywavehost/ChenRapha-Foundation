@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Heart } from 'lucide-react';
-import { NAV_ITEMS } from '../constants';
+import { NAV_ITEMS } from '../constants.ts';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

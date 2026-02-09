@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MISSION, VISION, CONTACT_INFO } from '../constants';
+import { MISSION, VISION, CONTACT_INFO } from '../constants.ts';
 import { Shield, Users, Heart, Anchor, Target, Award } from 'lucide-react';
 
 const About: React.FC = () => {
