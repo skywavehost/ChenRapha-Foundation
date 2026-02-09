@@ -1,8 +1,7 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, HeartPulse, ShieldCheck, Loader2 } from 'lucide-react';
 import { GoogleGenAI } from '@google/genai';
-import { Message } from '../types';
+import { Message } from '../types.ts';
 
 const HealthAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,13 +27,11 @@ const HealthAssistant: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Create a new GoogleGenAI instance right before making an API call to ensure it always uses the most up-to-date API key.
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const modelName = 'gemini-3-flash-preview';
       
       const response = await ai.models.generateContent({
         model: modelName,
-        // Send history to model, ensuring we map the roles correctly.
         contents: [...messages, userMsg].map(m => ({
           role: m.role,
           parts: [{ text: m.text }]
@@ -42,24 +39,25 @@ const HealthAssistant: React.FC = () => {
         config: {
           systemInstruction: `You are a compassionate health educator for ChenRapha Foundation, an NGO focusing on Sickle Cell Disease in Nigeria. 
           
-          FORMATTING RULES:
-          - DO NOT use any markdown characters like #, ##, ###, *, or **.
+          CRITICAL FORMATTING RULES:
+          - DO NOT use any markdown symbols. 
+          - DO NOT use hash signs (#) for headings.
+          - DO NOT use asterisks (*) for bold or italics.
           - Use plain text only.
-          - Use clear headings in CAPITAL LETTERS for structure.
-          - Use double line breaks between paragraphs and sections to ensure a clean, breathable layout.
-          - Use simple bullet points like "-" if needed, but do not use markdown bolding.
+          - For headings, use CAPITAL LETTERS on their own line.
+          - For lists, use simple dashes (-) or numbers followed by a period.
+          - Use double line breaks between paragraphs to ensure the text is very easy to read.
 
           CONTENT GOALS:
           1. Educate about Sickle Cell genotypes (AA, AS, SS, AC, SC).
           2. Provide crisis prevention tips (hydration, warmth, rest).
           3. Emphasize that your advice is for educational purposes and they should see a doctor for medical diagnosis.
           4. Always use a kind, hopeful, and supportive tone.
-          5. If asked about medication or financial help, direct them to contact ChenRapha Foundation directly through the website's contact form.`,
+          5. If asked about medication or financial help, direct them to contact ChenRapha Foundation directly via the contact form.`,
           temperature: 0.7,
         }
       });
 
-      // Extract text output directly from the text property of the response.
       const aiText = response.text || "I'm sorry, I'm having trouble connecting right now. Please try again or contact our team directly.";
       setMessages(prev => [...prev, { role: 'model', text: aiText }]);
     } catch (error) {
@@ -76,8 +74,9 @@ const HealthAssistant: React.FC = () => {
       <button
         onClick={() => setIsOpen(true)}
         className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-2xl transition-all hover:scale-110 active:scale-95 ${
-          isOpen ? 'opacity-0 scale-0' : 'bg-nature-green text-white'
+          isOpen ? 'opacity-0 scale-0 pointer-events-none' : 'bg-nature-green text-white'
         }`}
+        aria-label="Open Health Assistant"
       >
         <div className="flex items-center space-x-2">
           <MessageCircle size={24} />
@@ -103,7 +102,7 @@ const HealthAssistant: React.FC = () => {
               </p>
             </div>
           </div>
-          <button onClick={() => setIsOpen(false)} className="hover:bg-white hover:bg-opacity-20 p-1 rounded-full">
+          <button onClick={() => setIsOpen(false)} className="hover:bg-white hover:bg-opacity-20 p-1 rounded-full transition-colors">
             <X size={20} />
           </button>
         </div>
@@ -115,7 +114,7 @@ const HealthAssistant: React.FC = () => {
         >
           {messages.map((msg, idx) => (
             <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed shadow-sm whitespace-pre-wrap ${
+              <div className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed shadow-sm whitespace-pre-wrap ${
                 msg.role === 'user' 
                   ? 'bg-vivid-red text-white rounded-br-none' 
                   : 'bg-white text-gray-800 rounded-bl-none border border-gray-100'
@@ -126,9 +125,9 @@ const HealthAssistant: React.FC = () => {
           ))}
           {isLoading && (
             <div className="flex justify-start">
-              <div className="bg-white border border-gray-100 p-3 rounded-2xl rounded-bl-none shadow-sm text-gray-400 flex items-center space-x-2">
-                <Loader2 size={16} className="animate-spin" />
-                <span className="text-xs">Typing educational guidance...</span>
+              <div className="bg-white border border-gray-100 p-4 rounded-2xl rounded-bl-none shadow-sm text-gray-400 flex items-center space-x-2">
+                <Loader2 size={16} className="animate-spin text-nature-green" />
+                <span className="text-xs">Preparing educational guidance...</span>
               </div>
             </div>
           )}
@@ -141,19 +140,19 @@ const HealthAssistant: React.FC = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+              onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Ask about genotypes..."
-              className="flex-grow bg-transparent border-none focus:outline-none text-sm px-2 text-gray-700"
+              className="flex-grow bg-transparent border-none focus:outline-none text-sm px-2 text-gray-700 h-10"
             />
             <button 
               onClick={handleSend}
               disabled={isLoading || !input.trim()}
-              className="p-2 bg-nature-green text-white rounded-lg disabled:opacity-50 transition-colors"
+              className="p-2.5 bg-nature-green text-white rounded-lg disabled:opacity-50 transition-all hover:bg-opacity-90 active:scale-95"
             >
               <Send size={18} />
             </button>
           </div>
-          <p className="text-[10px] text-gray-400 mt-2 text-center">
+          <p className="text-[10px] text-gray-400 mt-2 text-center uppercase tracking-widest font-medium">
             Educational purposes only. Please see a medical doctor.
           </p>
         </div>
