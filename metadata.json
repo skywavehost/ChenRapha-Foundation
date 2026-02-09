@@ -1,0 +1,8 @@
+{
+  "name": "ChenRapha Foundation",
+  "description": "A compassionate NGO website for the ChenRapha Foundation, dedicated to sickle cell support and education in Nigeria.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
