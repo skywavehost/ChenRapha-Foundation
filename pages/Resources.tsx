@@ -121,7 +121,7 @@ const Resources: React.FC = () => {
           <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="Background" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Knowledge is <span className="text-gold">Grace</span></h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Knowledge is <span className="text-gold">Power</span></h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto font-light">
             Stay informed with the latest health guides, education modules, and foundation updates from the heart of Nigeria.
           </p>
