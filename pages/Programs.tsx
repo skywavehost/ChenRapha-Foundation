@@ -83,7 +83,12 @@ const Programs: React.FC = () => {
               We are always looking for volunteers in Nigeria to help drive our mission. Join our network of nurses, doctors, and educators to touch lives with grace.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="mailto:contact@chenraphafoundation.org" className="bg-vivid-red px-8 py-4 rounded-full font-bold hover:bg-opacity-90 transition-all text-center">
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSc7CMkekZhkaNWO9FV5Pl0ZatQIBsMpIgx7OX7DCZ6z-KnrzA/viewform" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-vivid-red px-8 py-4 rounded-full font-bold hover:bg-opacity-90 transition-all text-center"
+              >
                 Volunteer Today
               </a>
             </div>
