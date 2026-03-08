@@ -25,10 +25,10 @@ const Home: React.FC = () => {
               Nigeria Relief Program
             </span>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Touching Millions of Lives <span className="text-gold italic">with Grace</span>
+              Hope through <span className="text-gold italic">Knowledge</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed font-light">
-              Empowering Nigerians living with sickle cell through education, medication assistance, and compassionate healthcare support.
+              Empowering Individuals living with sickle cell disease through community outreach, education, awareness, and medical assistance.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link 
@@ -95,8 +95,8 @@ const Home: React.FC = () => {
               </div>
               <div className="space-y-6">
                 <div className="bg-nature-green p-8 rounded-2xl text-white">
-                  <h3 className="text-3xl font-bold mb-2">FREE</h3>
-                  <p className="text-sm font-medium uppercase tracking-wider">Services for All</p>
+                  <h3 className="text-3xl font-bold mb-2">Community</h3>
+                  <p className="text-sm font-medium uppercase tracking-wider">Outreach</p>
                 </div>
                 <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop" className="rounded-2xl shadow-lg w-full" alt="Community gathering" />
               </div>
@@ -121,20 +121,20 @@ const Home: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Support & Crisis Prevention</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Supporting patients with transportation to clinics, medication assistance, crisis-prevention education, and essential wellness resources.
+                Helping patients with medication support, self-management skills, and genotype education.
               </p>
               <ul className="space-y-3 mb-10">
                 <li className="flex items-center text-sm text-gray-700 font-medium">
                   <div className="w-2 h-2 bg-vivid-red rounded-full mr-3"></div>
-                  Clinic Transportation Assistance
+                  Access to essential medication & routine care
                 </li>
                 <li className="flex items-center text-sm text-gray-700 font-medium">
                   <div className="w-2 h-2 bg-vivid-red rounded-full mr-3"></div>
-                  Essential Medication Support
+                  Education on crisis prevention and self-management
                 </li>
                 <li className="flex items-center text-sm text-gray-700 font-medium">
                   <div className="w-2 h-2 bg-vivid-red rounded-full mr-3"></div>
-                  Crisis Management Training
+                  Genotype awareness and community screening programs
                 </li>
               </ul>
               <Link to="/programs" className="text-vivid-red font-bold flex items-center hover:underline">
@@ -154,15 +154,15 @@ const Home: React.FC = () => {
               <ul className="space-y-3 mb-10">
                 <li className="flex items-center text-sm text-gray-700 font-medium">
                   <div className="w-2 h-2 bg-gold rounded-full mr-3"></div>
-                  School Awareness Programs
+                  School awareness program
                 </li>
                 <li className="flex items-center text-sm text-gray-700 font-medium">
                   <div className="w-2 h-2 bg-gold rounded-full mr-3"></div>
-                  Free Genotype Testing Events
+                  Medical outreaches in underserved areas
                 </li>
                 <li className="flex items-center text-sm text-gray-700 font-medium">
                   <div className="w-2 h-2 bg-gold rounded-full mr-3"></div>
-                  Community Wellness Seminars
+                  Community Health workshops
                 </li>
               </ul>
               <Link to="/programs" className="text-gold font-bold flex items-center hover:underline">
@@ -178,7 +178,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
           <div className="text-white mb-6 md:mb-0">
             <h3 className="text-2xl font-bold mb-1">Are you or someone you know in need?</h3>
-            <p className="text-green-50">Reach out to our volunteer medical team in Lagos today.</p>
+            <p className="text-green-50">Reach out to our volunteer medical team today.</p>
           </div>
           <Link 
             to="/contact" 
