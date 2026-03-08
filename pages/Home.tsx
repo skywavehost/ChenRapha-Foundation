@@ -12,7 +12,7 @@ const Home: React.FC = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
+            src="https://skywavehost.com/wp-content/uploads/2026/03/children.png" 
             alt="Community Outreach" 
             className="w-full h-full object-cover opacity-50 brightness-75 scale-105"
           />
@@ -50,18 +50,18 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Video Section - Using Direct MP4 Link */}
+      {/* Video Section - YouTube Embed */}
       <section className="relative -mt-16 md:-mt-24 mb-20 z-30">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="relative aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
-            <video 
-              className="w-full h-full object-cover"
-              controls
-              poster="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop"
-            >
-              <source src="https://skywavehost.com/wp-content/uploads/2024/12/Dannytechnet-Capain.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe
+              className="absolute inset-0 w-full h-full border-0"
+              src="https://www.youtube.com/embed/dJBmtPR_flg"
+              title="ChenRapha Foundation Impact Story"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </section>

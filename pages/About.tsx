@@ -36,9 +36,9 @@ const About: React.FC = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://picsum.photos/id/11/800/600" 
+                src="https://skywavehost.com/wp-content/uploads/2026/03/sss-scaled.png" 
                 alt="Nigerian Medical Outreach" 
-                className="rounded-3xl shadow-2xl z-10 relative"
+                className="rounded-3xl shadow-2xl z-10 relative w-full"
               />
               <div className="absolute -bottom-6 -left-6 w-2/3 h-2/3 bg-gold -z-10 rounded-3xl opacity-20"></div>
             </div>
