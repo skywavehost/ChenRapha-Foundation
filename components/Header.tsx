@@ -38,14 +38,14 @@ const Header: React.FC = () => {
                 {item.label}
               </Link>
             ))}
-            <Link
-              to="/donate"
-              className="bg-vivid-red text-white px-6 py-2 rounded-full text-sm font-bold flex items-center space-x-2 hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl"
-            >
-              <Heart size={16} />
-              <span>Donate</span>
-            </Link>
           </nav>
+          <Link
+            to="/donate"
+            className="bg-vivid-red text-white px-6 py-2 rounded-full text-sm font-bold flex items-center space-x-2 hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl"
+          >
+            <Heart size={16} />
+            <span>Donate</span>
+          </Link>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">

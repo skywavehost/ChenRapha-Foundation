@@ -20,6 +20,5 @@ export const NAV_ITEMS = [
   { label: 'About Us', path: '/about' },
   { label: 'Our Programs', path: '/programs' },
   { label: 'Resources', path: '/resources' },
-  { label: 'Get Help', path: '/help' },
-  { label: 'Donate', path: '/donate' }
+  { label: 'Get Help', path: '/help' }
 ];
